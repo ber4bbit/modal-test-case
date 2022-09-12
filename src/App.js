@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {Button} from "@mui/material";
+
+import ModalWindow from "./components/ModalWindow/ModalWindow";
+import ModalWindowForm from "./components/ModalWindowForm/ModalWindowForm";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [ modalActive, setModalActive ] = useState(false);
+    return (
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh"
+        }}>
+            <Button variant="contained" onClick={() => setModalActive(true)}>Click here!</Button>
+            <ModalWindow active={ modalActive } setActive={ setModalActive }>
+                <ModalWindowForm/>
+            </ModalWindow>
+        </div>
+    );
 }
 
 export default App;

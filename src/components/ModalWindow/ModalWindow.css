@@ -1,0 +1,83 @@
+.modalContainer {
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: rgba(0, 0, 0, 0.4);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .4s all;
+}
+
+.modalContainer.active {
+    opacity: 1;
+
+    pointer-events: all;
+}
+
+.modalContainer__content {
+    width: 30vw;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background-color: white;
+
+    transform: scale(.5);
+    transition: .4s all;
+}
+
+.modalContainer__content.active {
+    transform: scale(1);
+}
+
+.modalContainer__content-header {
+    font-weight: 500;
+    font-size: 24px;
+
+    margin-top: -30px;
+}
+
+.modalContainer__content-closeBtn {
+    position: absolute;
+    left: 88%;
+}
+
+.productContainer {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 12px;
+}
+
+.productContainer__select {
+    width: 50%;
+}
+
+.labelText {
+    background-color: white;
+
+    width: 25%;
+
+    text-align: center;
+}
+
+.error {
+    color: red !important;
+
+    border: red 1px solid !important;
+}
